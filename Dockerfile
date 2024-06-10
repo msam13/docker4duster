@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN echo $CUDA_HOME
 RUN ls -l $CUDA_HOME
 RUN nvcc --version
-RUN nvidia-smi
+
 
 RUN git clone --recursive https://github.com/msam13/dust3r_aws.git /dust3r
 WORKDIR /dust3r
@@ -25,7 +25,7 @@ RUN pip install opencv-python==4.8.0.74
 RUN echo $CUDA_HOME
 RUN ls -l $CUDA_HOME
 RUN nvcc --version
-RUN nvidia-smi
+
 
 # Set CUDA environment variables
 ENV CUDA_HOME=/usr/local/cuda
@@ -35,7 +35,7 @@ ENV LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 RUN echo $CUDA_HOME
 RUN ls -l $CUDA_HOME
 RUN nvcc --version
-RUN nvidia-smi
+
 
 WORKDIR /dust3r/croco/models/curope/
 RUN python setup.py build_ext --inplace
@@ -43,7 +43,7 @@ RUN python setup.py build_ext --inplace
 RUN echo $CUDA_HOME
 RUN ls -l $CUDA_HOME
 RUN nvcc --version
-RUN nvidia-smi
+
 
 WORKDIR /dust3r
 COPY entrypoint.sh /entrypoint.sh

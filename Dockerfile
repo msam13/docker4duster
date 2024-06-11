@@ -28,7 +28,7 @@ RUN nvcc --version
 
 
 # Set CUDA environment variables
-ENV CUDA_HOME=/usr/local/cuda
+ENV CUDA_HOME=/usr/local/cuda-12.3/
 ENV PATH=$CUDA_HOME/bin:$PATH
 ENV LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
